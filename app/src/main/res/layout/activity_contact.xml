@@ -1,0 +1,67 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center_vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp">
+
+        <ImageView
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:src="@drawable/ic_instagram"
+            android:contentDescription="Instagram"
+            android:onClick="openInstagram"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp" />
+
+        <ImageView
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:src="@drawable/ic_facebook"
+            android:contentDescription="Facebook"
+            android:onClick="openFacebook"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp" />
+
+        <ImageView
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:src="@drawable/ic_whatsapp"
+            android:contentDescription="WhatsApp"
+            android:onClick="openWhatsApp"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp" />
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Telefone: (XX) XXXX-XXXX"
+        android:textSize="16sp"
+        android:textColor="#000000"
+        android:layout_marginTop="64dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Endereço: Rua XYZ, 8976"
+        android:textSize="16sp"
+        android:textColor="#000000"
+        android:layout_marginTop="8dp" />
+
+    <ImageView
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:src="@drawable/ic_barber_icon"
+        android:contentDescription="Barbershop Image"
+        android:layout_marginBottom="16dp" />
+
+</LinearLayout>

@@ -1,0 +1,185 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Nome"
+        android:textStyle="bold"/>
+
+    <EditText
+        android:id="@+id/nomeEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Digite seu nome" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Dia"
+        android:textStyle="bold"/>
+
+    <RadioGroup
+        android:id="@+id/diaRadioGroup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <GridLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:columnCount="2">
+
+            <androidx.appcompat.widget.AppCompatRadioButton
+                android:id="@+id/segundaRadioButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Segunda-feira" />
+
+            <androidx.appcompat.widget.AppCompatRadioButton
+                android:id="@+id/tercaRadioButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Terça-feira" />
+
+            <androidx.appcompat.widget.AppCompatRadioButton
+                android:id="@+id/quartaRadioButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Quarta-feira" />
+
+            <androidx.appcompat.widget.AppCompatRadioButton
+                android:id="@+id/quintaRadioButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Quinta-feira" />
+
+            <androidx.appcompat.widget.AppCompatRadioButton
+                android:id="@+id/sextaRadioButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Sexta-feira" />
+
+            <androidx.appcompat.widget.AppCompatRadioButton
+                android:id="@+id/sabadoRadioButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Sábado" />
+
+        </GridLayout>
+
+    </RadioGroup>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Horário"
+        android:textStyle="bold"/>
+
+
+    <RadioGroup
+        android:id="@+id/horarioRadioGroup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+        <GridLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:columnCount="5">
+
+            <androidx.appcompat.widget.AppCompatRadioButton
+                android:id="@+id/horario10RadioButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="10:00" />
+
+            <androidx.appcompat.widget.AppCompatRadioButton
+                android:id="@+id/horario11RadioButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="11:00" />
+
+            <androidx.appcompat.widget.AppCompatRadioButton
+                android:id="@+id/horario12RadioButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="12:00" />
+
+            <androidx.appcompat.widget.AppCompatRadioButton
+                android:id="@+id/horario13RadioButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="13:00" />
+
+            <androidx.appcompat.widget.AppCompatRadioButton
+                android:id="@+id/horario14RadioButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="14:00" />
+
+            <androidx.appcompat.widget.AppCompatRadioButton
+                android:id="@+id/horario15RadioButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="15:00" />
+
+            <androidx.appcompat.widget.AppCompatRadioButton
+                android:id="@+id/horario16RadioButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="16:00" />
+
+            <androidx.appcompat.widget.AppCompatRadioButton
+                android:id="@+id/horario17RadioButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="17:00" />
+
+            <androidx.appcompat.widget.AppCompatRadioButton
+                android:id="@+id/horario18RadioButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="18:00" />
+
+            <androidx.appcompat.widget.AppCompatRadioButton
+                android:id="@+id/horario19RadioButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="19:00" />
+
+
+        </GridLayout>
+
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/serviceNameTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Nome do Serviço"
+        android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/serviceNameEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Digite o nome do serviço"
+        android:inputType="text" />
+
+    <Button
+        android:id="@+id/enviarButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        app:backgroundTint="@android:color/black"
+        android:onClick="enviarAgendamento"
+        android:text="Enviar" />
+
+</LinearLayout>
