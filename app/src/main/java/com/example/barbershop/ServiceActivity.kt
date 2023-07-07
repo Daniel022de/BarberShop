@@ -1,7 +1,9 @@
 package com.example.barbershop
 
 import android.content.Intent
+import android.graphics.Color
 import android.os.Bundle
+import android.os.Handler
 import android.view.View
 import android.widget.Button
 import android.widget.Toast
@@ -78,24 +80,23 @@ class ServiceActivity : AppCompatActivity() {
         val onItemClickListener = object : AdapterService.OnItemClickListener {
             override fun onItemClick(position: Int) {
 
+                val itemClicked = recyclerView_services.getChildAt(position)
+                itemClicked.setBackgroundColor(Color.LTGRAY) // Altere a cor para a cor desejada
+
+                // Restaurar a cor original após um intervalo de tempo
+                val handler = Handler()
+                handler.postDelayed({
+                    itemClicked.setBackgroundColor(Color.TRANSPARENT) // Restaurar a cor original
+                }, 500) // Defina o tempo desejado para o efeito de clique
+
+
                 selectedServiceName = listServices[position].name
                 val intent = Intent(this@ServiceActivity, ScheduleActivity::class.java)
                 intent.putExtra("selected_service_name", selectedServiceName)
                 startActivity(intent)
 
 
-//                if (position == 0) {
-//                    setContentView(R.layout.hair)
-//                }
-//                else if (position == 1) {
-//                    setContentView(R.layout.bearde)
-//                }
-//                else if (position == 2) {
-//                    setContentView(R.layout.hair_bearde)
-//                }
-//                else {
-//                    setContentView(R.layout.eyebrow)
-//                }
+
 
             }
         }
