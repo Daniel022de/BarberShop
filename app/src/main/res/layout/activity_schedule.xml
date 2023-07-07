@@ -1,7 +1,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:padding="16dp">
 
@@ -9,7 +9,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Nome"
-        android:textStyle="bold"/>
+        android:textStyle="bold" />
 
     <EditText
         android:id="@+id/nomeEditText"
@@ -22,141 +22,143 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:text="Dia"
-        android:textStyle="bold"/>
+        android:textStyle="bold" />
 
-    <RadioGroup
-        android:id="@+id/diaRadioGroup"
+    <!--    <RadioGroup-->
+    <!--        android:id="@+id/diaRadioGroup"-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="wrap_content">-->
+
+    <GridLayout
+        android:id="@+id/diaGridLayout"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:columnCount="2">
 
-        <GridLayout
-            android:layout_width="match_parent"
+        <androidx.appcompat.widget.AppCompatRadioButton
+            android:id="@+id/segundaRadioButton"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:columnCount="2">
+            android:text="Segunda-feira" />
 
-            <androidx.appcompat.widget.AppCompatRadioButton
-                android:id="@+id/segundaRadioButton"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Segunda-feira" />
+        <androidx.appcompat.widget.AppCompatRadioButton
+            android:id="@+id/tercaRadioButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Terça-feira" />
 
-            <androidx.appcompat.widget.AppCompatRadioButton
-                android:id="@+id/tercaRadioButton"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Terça-feira" />
+        <androidx.appcompat.widget.AppCompatRadioButton
+            android:id="@+id/quartaRadioButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Quarta-feira" />
 
-            <androidx.appcompat.widget.AppCompatRadioButton
-                android:id="@+id/quartaRadioButton"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Quarta-feira" />
+        <androidx.appcompat.widget.AppCompatRadioButton
+            android:id="@+id/quintaRadioButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Quinta-feira" />
 
-            <androidx.appcompat.widget.AppCompatRadioButton
-                android:id="@+id/quintaRadioButton"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Quinta-feira" />
+        <androidx.appcompat.widget.AppCompatRadioButton
+            android:id="@+id/sextaRadioButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sexta-feira" />
 
-            <androidx.appcompat.widget.AppCompatRadioButton
-                android:id="@+id/sextaRadioButton"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Sexta-feira" />
+        <androidx.appcompat.widget.AppCompatRadioButton
+            android:id="@+id/sabadoRadioButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sábado" />
 
-            <androidx.appcompat.widget.AppCompatRadioButton
-                android:id="@+id/sabadoRadioButton"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Sábado" />
+    </GridLayout>
 
-        </GridLayout>
-
-    </RadioGroup>
+    <!--    </RadioGroup>-->
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:text="Horário"
-        android:textStyle="bold"/>
+        android:textStyle="bold" />
 
 
-    <RadioGroup
-        android:id="@+id/horarioRadioGroup"
+    <!--    <RadioGroup-->
+    <!--        android:id="@+id/horarioRadioGroup"-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="wrap_content">-->
+
+
+    <GridLayout
+        android:id="@+id/horarioGridLayout"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:columnCount="5">
 
-
-        <GridLayout
-            android:layout_width="match_parent"
+        <androidx.appcompat.widget.AppCompatRadioButton
+            android:id="@+id/horario10RadioButton"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:columnCount="5">
+            android:text="10:00" />
 
-            <androidx.appcompat.widget.AppCompatRadioButton
-                android:id="@+id/horario10RadioButton"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="10:00" />
+        <androidx.appcompat.widget.AppCompatRadioButton
+            android:id="@+id/horario11RadioButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="11:00" />
 
-            <androidx.appcompat.widget.AppCompatRadioButton
-                android:id="@+id/horario11RadioButton"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="11:00" />
+        <androidx.appcompat.widget.AppCompatRadioButton
+            android:id="@+id/horario12RadioButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="12:00" />
 
-            <androidx.appcompat.widget.AppCompatRadioButton
-                android:id="@+id/horario12RadioButton"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="12:00" />
+        <androidx.appcompat.widget.AppCompatRadioButton
+            android:id="@+id/horario13RadioButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="13:00" />
 
-            <androidx.appcompat.widget.AppCompatRadioButton
-                android:id="@+id/horario13RadioButton"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="13:00" />
+        <androidx.appcompat.widget.AppCompatRadioButton
+            android:id="@+id/horario14RadioButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="14:00" />
 
-            <androidx.appcompat.widget.AppCompatRadioButton
-                android:id="@+id/horario14RadioButton"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="14:00" />
+        <androidx.appcompat.widget.AppCompatRadioButton
+            android:id="@+id/horario15RadioButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="15:00" />
 
-            <androidx.appcompat.widget.AppCompatRadioButton
-                android:id="@+id/horario15RadioButton"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="15:00" />
+        <androidx.appcompat.widget.AppCompatRadioButton
+            android:id="@+id/horario16RadioButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="16:00" />
 
-            <androidx.appcompat.widget.AppCompatRadioButton
-                android:id="@+id/horario16RadioButton"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="16:00" />
+        <androidx.appcompat.widget.AppCompatRadioButton
+            android:id="@+id/horario17RadioButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="17:00" />
 
-            <androidx.appcompat.widget.AppCompatRadioButton
-                android:id="@+id/horario17RadioButton"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="17:00" />
+        <androidx.appcompat.widget.AppCompatRadioButton
+            android:id="@+id/horario18RadioButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="18:00" />
 
-            <androidx.appcompat.widget.AppCompatRadioButton
-                android:id="@+id/horario18RadioButton"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="18:00" />
-
-            <androidx.appcompat.widget.AppCompatRadioButton
-                android:id="@+id/horario19RadioButton"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="19:00" />
+        <androidx.appcompat.widget.AppCompatRadioButton
+            android:id="@+id/horario19RadioButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="19:00" />
 
 
-        </GridLayout>
+    </GridLayout>
 
-    </RadioGroup>
+    <!--    </RadioGroup>-->
 
     <TextView
         android:id="@+id/serviceNameTextView"
@@ -178,8 +180,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        app:backgroundTint="@android:color/black"
         android:onClick="enviarAgendamento"
-        android:text="Enviar" />
+        android:text="Enviar"
+        app:backgroundTint="@android:color/black" />
 
 </LinearLayout>

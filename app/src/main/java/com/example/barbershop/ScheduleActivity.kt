@@ -7,6 +7,7 @@ import android.net.Uri
 import android.view.View
 import android.widget.Button
 import android.widget.EditText
+import android.widget.GridLayout
 import android.widget.RadioButton
 import android.widget.RadioGroup
 import android.widget.TextView
@@ -15,10 +16,14 @@ import android.widget.Toast
 
 class ScheduleActivity : AppCompatActivity() {
     private lateinit var nomeEditText: EditText
-    private lateinit var diaRadioGroup: RadioGroup
-    private lateinit var horarioRadioGroup: RadioGroup
+//    private lateinit var diaRadioGroup: RadioGroup
+//    private lateinit var horarioRadioGroup: RadioGroup
     private lateinit var serviceNameTextView: TextView
     private lateinit var serviceNameEditText: EditText
+    private lateinit var diaGridLayout: GridLayout
+    private lateinit var horarioGridLayout: GridLayout
+
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -26,10 +31,12 @@ class ScheduleActivity : AppCompatActivity() {
 
 
         nomeEditText = findViewById(R.id.nomeEditText)
-        diaRadioGroup = findViewById(R.id.diaRadioGroup)
-        horarioRadioGroup = findViewById(R.id.horarioRadioGroup)
+//        diaRadioGroup = findViewById(R.id.diaRadioGroup)
+//        horarioRadioGroup = findViewById(R.id.horarioRadioGroup)
         serviceNameTextView = findViewById(R.id.serviceNameTextView)
         serviceNameEditText = findViewById(R.id.serviceNameEditText)
+        diaGridLayout = findViewById(R.id.diaGridLayout)
+        horarioGridLayout = findViewById(R.id.horarioGridLayout)
 
         val selectedServiceName = intent.getStringExtra("selected_service_name")
         serviceNameEditText.setText(selectedServiceName)
@@ -46,43 +53,42 @@ class ScheduleActivity : AppCompatActivity() {
 
     fun enviarAgendamento() {
         val nome = nomeEditText.text.toString()
-        val dia = when (diaRadioGroup.checkedRadioButtonId) {
-            R.id.segundaRadioButton -> "Segunda-feira"
-            R.id.tercaRadioButton -> "Terça-feira"
-            R.id.quartaRadioButton -> "Quarta-feira"
-            R.id.quintaRadioButton -> "Quinta-feira"
-            R.id.sextaRadioButton -> "Sexta-feira"
-            R.id.sabadoRadioButton -> "Sábado"
-            else -> ""
-        }
-        val horario = when (horarioRadioGroup.checkedRadioButtonId) {
-            R.id.horario10RadioButton -> "10:00"
-            R.id.horario11RadioButton -> "11:00"
-            R.id.horario12RadioButton -> "12:00"
-            R.id.horario13RadioButton -> "13:00"
-            R.id.horario14RadioButton -> "14:00"
-            R.id.horario15RadioButton -> "15:00"
-            R.id.horario16RadioButton -> "16:00"
-            R.id.horario17RadioButton -> "17:00"
-            R.id.horario18RadioButton -> "18:00"
-            R.id.horario19RadioButton -> "19:00"
-            else -> ""
-        }
-
-//        if (nome.isNotEmpty() && dia.isNotEmpty() && horario.isNotEmpty()) {
-//            // Envie o agendamento para o WhatsApp
-            val mensagem =
-                "Olá! Gostaria de agendar um horário.\n\nNome: $nome\nDia: $dia\nHorário: $horario"
-            enviarMensagemWhatsApp(
-                "+5521985198380",
-                mensagem
-            )
-
-            desabilitarDia(dia)
-            desabilitarHorario(horario)
-//        } else {
-//            Toast.makeText(this, "Preencha todos os campos", Toast.LENGTH_SHORT).show()
+        val diaSelecionado = getDiaSelecionado(diaGridLayout)
+        val horarioSelecionado = gethorarioSelecionado(horarioGridLayout)
+        val selectedServiceName = serviceNameEditText.text.toString()
+//        val dia = when (diaRadioGroup.checkedRadioButtonId) {
+//            R.id.segundaRadioButton -> "Segunda-feira"
+//            R.id.tercaRadioButton -> "Terça-feira"
+//            R.id.quartaRadioButton -> "Quarta-feira"
+//            R.id.quintaRadioButton -> "Quinta-feira"
+//            R.id.sextaRadioButton -> "Sexta-feira"
+//            R.id.sabadoRadioButton -> "Sábado"
+//            else -> ""
 //        }
+//        val horario = when (horarioRadioGroup.checkedRadioButtonId) {
+//            R.id.horario10RadioButton -> "10:00"
+//            R.id.horario11RadioButton -> "11:00"
+//            R.id.horario12RadioButton -> "12:00"
+//            R.id.horario13RadioButton -> "13:00"
+//            R.id.horario14RadioButton -> "14:00"
+//            R.id.horario15RadioButton -> "15:00"
+//            R.id.horario16RadioButton -> "16:00"
+//            R.id.horario17RadioButton -> "17:00"
+//            R.id.horario18RadioButton -> "18:00"
+//            R.id.horario19RadioButton -> "19:00"
+//            else -> ""
+//        }
+
+        if (nome.isNotEmpty() && diaSelecionado.isNotEmpty() && horarioSelecionado.isNotEmpty() && selectedServiceName.isNotEmpty()) {
+
+            val mensagem = "*Olá! Gostaria de agendar um horário*.\n\n*Nome*: $nome\n*Serviço*: $selectedServiceName\n*Dia*: $diaSelecionado\n*Horário*: $horarioSelecionado"
+            enviarMensagemWhatsApp("+5521985198380", mensagem)
+
+            desabilitarDia(diaSelecionado)
+            desabilitarHorario(horarioSelecionado)
+        } else {
+            Toast.makeText(this, "Preencha todos os campos", Toast.LENGTH_SHORT).show()
+        }
 
     }
 
@@ -164,5 +170,23 @@ class ScheduleActivity : AppCompatActivity() {
                 horario19RadioButton.isEnabled = false
             }
         }
+    }
+    fun getDiaSelecionado(gridLayout: GridLayout): String {
+        for (i in 0 until gridLayout.childCount) {
+            val radioButton = gridLayout.getChildAt(i) as RadioButton
+            if (radioButton.isChecked) {
+                return radioButton.text.toString()
+            }
+        }
+        return ""
+    }
+    fun gethorarioSelecionado(gridLayout: GridLayout): String {
+        for (i in 0 until gridLayout.childCount) {
+            val radioButton = gridLayout.getChildAt(i) as RadioButton
+            if (radioButton.isChecked) {
+                return radioButton.text.toString()
+            }
+        }
+        return ""
     }
 }
