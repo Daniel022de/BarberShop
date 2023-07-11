@@ -8,10 +8,13 @@ import android.view.View
 import android.widget.Button
 import android.widget.EditText
 import android.widget.GridLayout
+import android.widget.ImageView
 import android.widget.RadioButton
 import android.widget.RadioGroup
 import android.widget.TextView
 import android.widget.Toast
+import androidx.core.graphics.drawable.toDrawable
+import com.example.barbershop.model.Service
 
 
 class ScheduleActivity : AppCompatActivity() {
@@ -22,6 +25,11 @@ class ScheduleActivity : AppCompatActivity() {
     private lateinit var serviceNameEditText: EditText
     private lateinit var diaGridLayout: GridLayout
     private lateinit var horarioGridLayout: GridLayout
+    private lateinit var servicePriceEditText: EditText
+    private lateinit var imageService : ImageView
+    private lateinit var priceService: TextView
+    private lateinit var nameService: TextView
+    private lateinit var describeSerivce: TextView
 
 
 
@@ -37,9 +45,25 @@ class ScheduleActivity : AppCompatActivity() {
         serviceNameEditText = findViewById(R.id.serviceNameEditText)
         diaGridLayout = findViewById(R.id.diaGridLayout)
         horarioGridLayout = findViewById(R.id.horarioGridLayout)
+        servicePriceEditText = findViewById(R.id.servicePriceEditText)
+        imageService = findViewById(R.id.serviceImage)
+        priceService = findViewById(R.id.price_service)
+        nameService = findViewById(R.id.name_service)
+        describeSerivce = findViewById(R.id.describe_service)
 
-        val selectedServiceName = intent.getStringExtra("selected_service_name")
-        serviceNameEditText.setText(selectedServiceName)
+        val selectedServiceName = intent.getSerializableExtra("selected_service_name") as? Service
+
+        serviceNameEditText.setText(selectedServiceName?.name)
+        servicePriceEditText.setText(selectedServiceName?.price.orEmpty())
+
+
+        if (selectedServiceName != null) {
+            imageService.setImageResource(selectedServiceName.image)
+            priceService.setText(selectedServiceName.price)
+            nameService.setText(selectedServiceName.name)
+            describeSerivce.setText(selectedServiceName.describe)
+        }
+
 
         val enviarButton = findViewById<Button>(R.id.enviarButton)
         enviarButton.setOnClickListener {
@@ -56,6 +80,8 @@ class ScheduleActivity : AppCompatActivity() {
         val diaSelecionado = getDiaSelecionado(diaGridLayout)
         val horarioSelecionado = gethorarioSelecionado(horarioGridLayout)
         val selectedServiceName = serviceNameEditText.text.toString()
+        val selectedPrice = servicePriceEditText.text.toString()
+
 //        val dia = when (diaRadioGroup.checkedRadioButtonId) {
 //            R.id.segundaRadioButton -> "Segunda-feira"
 //            R.id.tercaRadioButton -> "Terça-feira"
@@ -81,7 +107,8 @@ class ScheduleActivity : AppCompatActivity() {
 
         if (nome.isNotEmpty() && diaSelecionado.isNotEmpty() && horarioSelecionado.isNotEmpty() && selectedServiceName.isNotEmpty()) {
 
-            val mensagem = "*Olá! Gostaria de agendar um horário*.\n\n*Nome*: $nome\n*Serviço*: $selectedServiceName\n*Dia*: $diaSelecionado\n*Horário*: $horarioSelecionado"
+            val mensagem = "*Olá! Gostaria de agendar um horário*.\n\n*Nome*: $nome\n*Serviço*: $selectedServiceName\n*Dia*: $diaSelecionado\n*Horário*: $horarioSelecionado\n" +
+                    "*Preço*: $selectedPrice"
             enviarMensagemWhatsApp("+5521985198380", mensagem)
 
             desabilitarDia(diaSelecionado)

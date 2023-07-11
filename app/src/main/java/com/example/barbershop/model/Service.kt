@@ -1,5 +1,7 @@
 package com.example.barbershop.model
 
+import java.io.Serializable
+
 data class Service(
     val image: Int,
     val name: String,
@@ -7,4 +9,4 @@ data class Service(
     val price: String
 
 
-)
+) : Serializable

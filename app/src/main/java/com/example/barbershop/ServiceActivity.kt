@@ -15,7 +15,7 @@ import com.example.barbershop.model.Service
 
 class ServiceActivity : AppCompatActivity() {
 
-    private var selectedServiceName: String? = null
+    private var selectedServiceName: Service? = null
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -90,7 +90,7 @@ class ServiceActivity : AppCompatActivity() {
                 }, 500) // Defina o tempo desejado para o efeito de clique
 
 
-                selectedServiceName = listServices[position].name
+                selectedServiceName = listServices[position]
                 val intent = Intent(this@ServiceActivity, ScheduleActivity::class.java)
                 intent.putExtra("selected_service_name", selectedServiceName)
                 startActivity(intent)
