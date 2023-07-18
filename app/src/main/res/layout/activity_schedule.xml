@@ -1,4 +1,4 @@
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
@@ -9,55 +9,63 @@
         android:orientation="vertical"
         android:padding="16dp">
 
-
-        <RelativeLayout
+        <com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="16dp">
+            android:layout_margin="8dp">
 
-            <ImageView
-                android:id="@+id/serviceImage"
-                android:layout_width="78dp"
-                android:layout_height="75dp"
-                android:layout_margin="10dp"
-                android:src="@drawable/logo" />
-
-            <TextView
-                android:id="@+id/name_service"
+            <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="29dp"
-                android:layout_toEndOf="@+id/serviceImage"
-                android:text="BarberShop"
-                android:textColor="@color/black"
-                android:textSize="20sp"
-                android:textStyle="bold" />
+                android:padding="16dp">
 
-            <TextView
-                android:id="@+id/describe_service"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/name_service"
-                android:layout_toEndOf="@+id/serviceImage"
-                android:maxLines="4"
-                android:text="Há muitos anos oferecendo serviços de qualidade e com"
-                android:textColor="@color/black"
-                android:textSize="16sp" />
+                <ImageView
+                    android:id="@+id/serviceImage"
+                    android:layout_width="78dp"
+                    android:layout_height="75dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:src="@drawable/logo" />
 
-            <TextView
-                android:id="@+id/price_service"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/describe_service"
-                android:layout_toEndOf="@+id/serviceImage"
-                android:text="um preço que cabe no seu bolso!"
-                android:textColor="@android:color/holo_green_dark"
-                android:textSize="18sp"
-                android:textStyle="bold" />
+                <TextView
+                    android:id="@+id/name_service"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="29dp"
+                    android:layout_toEndOf="@+id/serviceImage"
+                    android:text="BarberShop"
+                    android:textColor="@color/black"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
 
-            <!-- Resto do código -->
+                <TextView
+                    android:id="@+id/describe_service"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/name_service"
+                    android:layout_toEndOf="@+id/serviceImage"
+                    android:maxLines="4"
+                    android:text="Há muitos anos oferecendo serviços de qualidade e com"
+                    android:textColor="@color/black"
+                    android:textSize="16sp" />
 
-        </RelativeLayout>
+                <TextView
+                    android:id="@+id/price_service"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/describe_service"
+                    android:layout_toEndOf="@+id/serviceImage"
+                    android:text="um preço que cabe no seu bolso!"
+                    android:textColor="@android:color/holo_green_dark"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <!-- Resto do código -->
+
+            </RelativeLayout>
+        </com.google.android.material.card.MaterialCardView>
 
 
         <TextView

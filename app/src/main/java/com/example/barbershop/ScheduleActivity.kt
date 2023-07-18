@@ -53,15 +53,15 @@ class ScheduleActivity : AppCompatActivity() {
 
         val selectedServiceName = intent.getSerializableExtra("selected_service_name") as? Service
 
-        serviceNameEditText.setText(selectedServiceName?.name)
-        servicePriceEditText.setText(selectedServiceName?.price.orEmpty())
+        serviceNameEditText.setText(selectedServiceName?.nameResourceId)
+        servicePriceEditText.setText(selectedServiceName?.priceResourceId.orEmpty())
 
 
         if (selectedServiceName != null) {
-            imageService.setImageResource(selectedServiceName.image)
-            priceService.setText(selectedServiceName.price)
-            nameService.setText(selectedServiceName.name)
-            describeSerivce.setText(selectedServiceName.describe)
+            imageService.setImageResource(selectedServiceName.imageResourceId)
+            priceService.setText(selectedServiceName.priceResourceId)
+            nameService.setText(selectedServiceName.nameResourceId)
+            describeSerivce.setText(selectedServiceName.describeResourceId)
         }
 
 

@@ -34,30 +34,30 @@ class ServiceActivity : AppCompatActivity() {
 
         val service1 = Service(
             R.drawable.ic_hair,
-            name = "Corte de Cabelo",
-            describe = "Faça uma breve descrição do seu serviço",
-            price = "R$ 20,00"
+            nameResourceId = "Corte de Cabelo",
+            describeResourceId = "Faça uma breve descrição do seu serviço",
+            priceResourceId = "R$ 20,00"
 
         )
         val service2 = Service(
             R.drawable.ic_bearde,
-            name = "Barba",
-            describe = "Faça uma breve descrição do seu serviço",
-            price = "R$ 10,00"
+            "Barba",
+            "Faça uma breve descrição do seu serviço",
+            "R$ 10,00"
 
         )
         val service3 = Service(
             R.drawable.ic_hair_bearde,
-            name = "Corte de Cabelo e Barba",
-            describe = "Faça uma breve descrição do seu serviço",
-            price = "R$ 30,00"
+            "Corte de Cabelo e Barba",
+            "Faça uma breve descrição do seu serviço",
+            "R$ 30,00"
 
         )
         val service4 = Service(
             R.drawable.ic_eyebrow,
-            name = "Sombrancelha",
-            describe = "Faça uma breve descrição do seu serviço",
-            price = "R$ 20,00"
+            "Sombrancelha",
+            "Faça uma breve descrição do seu serviço",
+            "R$ 20,00"
 
         )
 

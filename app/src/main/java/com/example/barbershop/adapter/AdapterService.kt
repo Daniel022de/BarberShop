@@ -28,10 +28,10 @@ class AdapterService (private val context: Context, private val services: Mutabl
     }
 
     override fun onBindViewHolder(holder: ServiceViewHolder, position: Int) {
-        holder.image.setImageResource(services[position].image)
-        holder.name.text = services[position].name
-        holder.describe.text = services[position].describe
-        holder.price.text = services[position].price
+        holder.image.setImageResource(services[position].imageResourceId)
+        holder.name.text = services[position].nameResourceId
+        holder.describe.text = services[position].describeResourceId
+        holder.price.text = services[position].priceResourceId
 
         holder.itemView.setOnClickListener {
             listener?.onItemClick(position)

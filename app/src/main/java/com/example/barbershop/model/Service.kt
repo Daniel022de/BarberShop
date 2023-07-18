@@ -3,10 +3,10 @@ package com.example.barbershop.model
 import java.io.Serializable
 
 data class Service(
-    val image: Int,
-    val name: String,
-    val describe: String,
-    val price: String
+    val imageResourceId: Int,
+    val nameResourceId: String,
+    val describeResourceId: String,
+    val priceResourceId: String
 
 
 ) : Serializable
