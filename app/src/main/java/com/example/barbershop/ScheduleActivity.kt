@@ -69,8 +69,6 @@ class ScheduleActivity : AppCompatActivity() {
         enviarButton.setOnClickListener {
             enviarAgendamento()
         }
-
-
     }
 
 
