@@ -23,13 +23,12 @@ class ServiceActivity : AppCompatActivity() {
         setContentView(R.layout.activity_service)
 
         val recyclerView_services = findViewById<RecyclerView>(R.id.recyclerView_services)
-        recyclerView_services.layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL,false)
+        recyclerView_services.layoutManager =
+            LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
         recyclerView_services.setHasFixedSize(true)
 
-        //val AppointmentButton: Button = findViewById(R.id.buttonBookAppointment)
-
         val listServices: MutableList<Service> = mutableListOf()
-        val adapterService = AdapterService(this,listServices)
+        val adapterService = AdapterService(this, listServices)
         recyclerView_services.adapter = adapterService
 
         val service1 = Service(
@@ -67,16 +66,6 @@ class ServiceActivity : AppCompatActivity() {
         listServices.add(service4)
 
 
-//        AppointmentButton.setOnClickListener(object : View.OnClickListener {
-//            override fun onClick(v: View?) {
-//                val intent = Intent(this@ServiceActivity, ScheduleActivity::class.java)
-//                startActivity(intent)
-//            }
-//        })
-
-
-
-
         val onItemClickListener = object : AdapterService.OnItemClickListener {
             override fun onItemClick(position: Int) {
 
@@ -96,14 +85,11 @@ class ServiceActivity : AppCompatActivity() {
                 startActivity(intent)
 
 
-
-
             }
         }
 
         adapterService.setOnItemClickListener(onItemClickListener)
 
 
-
-
-    }}
+    }
+}

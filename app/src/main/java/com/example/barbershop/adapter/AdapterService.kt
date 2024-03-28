@@ -12,45 +12,51 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.barbershop.R
 import com.example.barbershop.model.Service
 
-class AdapterService (private val context: Context, private val services: MutableList<Service>) : RecyclerView.Adapter<AdapterService.ServiceViewHolder>() {
+class AdapterService(private val context: Context, private val services: MutableList<Service>) :
+    RecyclerView.Adapter<AdapterService.ServiceViewHolder>() {
 
     interface OnItemClickListener {
         fun onItemClick(position: Int)
     }
+
     private var listener: OnItemClickListener? = null
 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ServiceViewHolder {
-        val itemLista = LayoutInflater.from(context).inflate(R.layout.services_item,parent,false)
-        val holder = ServiceViewHolder(itemLista)
-        return holder
+        val itemLista = LayoutInflater.from(context).inflate(R.layout.services_item, parent, false)
+        return ServiceViewHolder(itemLista)
 
     }
 
     override fun onBindViewHolder(holder: ServiceViewHolder, position: Int) {
-        holder.image.setImageResource(services[position].imageResourceId)
-        holder.name.text = services[position].nameResourceId
-        holder.describe.text = services[position].describeResourceId
-        holder.price.text = services[position].priceResourceId
-
-        holder.itemView.setOnClickListener {
-            listener?.onItemClick(position)
-        }
-
+        val itemCurrent = services[position]
+        holder.bind(itemCurrent)
     }
 
     override fun getItemCount(): Int = services.size
 
 
-
     inner class ServiceViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        val image = itemView.findViewById<ImageView>(R.id.image_service)
-        val name = itemView.findViewById<TextView>(R.id.name_service)
-        val describe = itemView.findViewById<TextView>(R.id.describe_service)
-        val price = itemView.findViewById<TextView>(R.id.price_service)
+
+        fun bind(item: Service) {
+            val image = itemView.findViewById<ImageView>(R.id.image_service)
+            val name = itemView.findViewById<TextView>(R.id.name_service)
+            val describe = itemView.findViewById<TextView>(R.id.describe_service)
+            val price = itemView.findViewById<TextView>(R.id.price_service)
+
+            image.setImageResource(item.imageResourceId)
+            name.text = item.nameResourceId
+            describe.text = item.describeResourceId
+            price.text = item.priceResourceId
+
+            itemView.setOnClickListener {
+                listener?.onItemClick(position)
+            }
+
+
+        }
 
     }
-
 
 
     fun setOnItemClickListener(listener: OnItemClickListener) {

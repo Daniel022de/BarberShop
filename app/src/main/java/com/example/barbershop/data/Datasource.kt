@@ -10,11 +10,8 @@ class Datasource {
         return listOf<Service>(
             //Service(R.drawable.ic_hair,R.string.hair,R.string.describe,R.string.price_hair),
             //Service(R.drawable.ic_hair,R.string.hair,R.string.describe,R.string.price_hair)
-
-
+            
         )
-
-
 
 
     }

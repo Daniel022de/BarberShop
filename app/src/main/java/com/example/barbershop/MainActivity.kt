@@ -15,21 +15,15 @@ class MainActivity : AppCompatActivity() {
         val ServicesButton: Button = findViewById(R.id.buttonViewServices)
 //        val ContactButton: Button = findViewById(R.id.buttonContactUs)
 
-        AppointmentButton.setOnClickListener(object : View.OnClickListener {
-            override fun onClick(v: View?) {
-                val intent = Intent(this@MainActivity, ScheduleActivity::class.java)
-                startActivity(intent)
-            }
-        })
+        AppointmentButton.setOnClickListener {
+            val intent = Intent(this@MainActivity, ScheduleActivity::class.java)
+            startActivity(intent)
+        }
 
-        ServicesButton.setOnClickListener( object : View.OnClickListener{
-
-            override fun onClick(v: View?) {
-                val intent = Intent(this@MainActivity, ServiceActivity::class.java)
-                startActivity(intent)
-            }
-
-        })
+        ServicesButton.setOnClickListener {
+            val intent = Intent(this@MainActivity, ServiceActivity::class.java)
+            startActivity(intent)
+        }
 
 //        ContactButton.setOnClickListener{
 //            setContentView(R.layout.activity_contact)
