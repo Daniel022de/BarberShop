@@ -1,11 +1,13 @@
 # Aplicativo de Barbearia
 
-Este foi primeiro projeto Android, desenvolvido usando a linguagem Kotlin. Trata-se de um aplicativo de barbearia que permite aos usuários agendar um dia e horário com o barbeiro através do WhatsApp.
+Este foi meu primeiro (baby😄) projeto Android, desenvolvido usando a linguagem Kotlin.
+Trata-se de um aplicativo de barbearia que permite aos usuários agendar um dia e horário com o barbeiro através do WhatsApp.
 
 ## Tecnologias Utilizadas
 
 - **Kotlin**: A linguagem principal utilizada no desenvolvimento do aplicativo.
-- **XML e Componentes de Interface do Usuário**: Utilizei XML para criar layouts e componentes como TextView, EditText, ImageView, Buttons, entre outros.
+- **XML e Componentes de Interface do Usuário**: Utilizei XML para criar layouts e componentes como TextView,
+   EditText, ImageView, Buttons, entre outros.
 - **Android Studio**: Ferramenta utilizada para desenvolver o projeto.
   
 
